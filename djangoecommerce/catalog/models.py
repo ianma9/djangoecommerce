@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Category(models.Model):
 
@@ -22,9 +23,15 @@ class Category(models.Model):
         auto_now=True
     )
 
+    def get_absolute_url(self):
+        return reverse(
+            'category',
+            kwargs={'slug': self.slug}
+        )
+
     def __str__(self):
         return self.name
-
+                               
     class Meta:
         verbose_name = 'Categoria'
         verbose_name_plural = 'Categorias'
@@ -69,6 +76,12 @@ class Product(models.Model):
         'Modificado em',
         auto_now=True
     )
+
+    def get_absolute_url(self):
+        return reverse(
+            'product',
+            kwargs={'slug': self.slug}
+        )
 
     def __str__(self):
         return self.name
