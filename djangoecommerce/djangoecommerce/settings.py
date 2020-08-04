@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     'core',
     'catalog',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +134,5 @@ STATIC_URL = '/static/'
 #auth
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'index'
+LOGOUT_URL = 'logout'
+AUTH_USER_MODEL = 'accounts.User'
