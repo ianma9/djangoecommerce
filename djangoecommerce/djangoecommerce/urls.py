@@ -25,5 +25,7 @@ urlpatterns = [
     path('entrar/', LoginView.as_view(template_name='login.html'), name='login'),
     path('sair/', LogoutView.as_view(next_page='index'), name='logout'),
     path('catalogo/', include('catalog.urls')),
+    path('conta/', include('accounts.urls')),
+    path('compras/', include('checkout.urls')),
     path('admin/', admin.site.urls),
 ]

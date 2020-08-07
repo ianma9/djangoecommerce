@@ -1,5 +1,3 @@
-ines (19 sloc)  437 Bytes
-  
 {% extends "base.html" %}
 
 {% block title %}
@@ -17,6 +15,9 @@ ines (19 sloc)  437 Bytes
       </a>
   </div>
   <div class="col-sm-8">
+      <p class="text-right">
+          <a href="{% url 'create_cartitem' product.slug %}" class="btn btn-success">Adicionar ao Carrinho</a>
+      </p>
       {{ product.description|linebreaks }}
   </div>
 </div>
